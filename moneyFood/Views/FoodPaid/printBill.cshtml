@@ -1,0 +1,193 @@
+﻿@model moneyFood.Models.BlogViewPrintBill
+@{
+    Layout = null;
+}
+
+<style>
+    table.minimalistBlack {
+        border: 3px solid #000000;
+        width: 100%;
+        text-align: left;
+        border-collapse: collapse;
+    }
+
+        table.minimalistBlack td, table.minimalistBlack th {
+            border: 1px solid #000000;
+            padding: 5px 4px;
+        }
+
+        table.minimalistBlack tbody td {
+            font-size: 20px;
+        }
+
+        table.minimalistBlack thead {
+            background: #CFCFCF;
+            background: -moz-linear-gradient(top, #dbdbdb 0%, #d3d3d3 66%, #CFCFCF 100%);
+            background: -webkit-linear-gradient(top, #dbdbdb 0%, #d3d3d3 66%, #CFCFCF 100%);
+            background: linear-gradient(to bottom, #dbdbdb 0%, #d3d3d3 66%, #CFCFCF 100%);
+            border-bottom: 3px solid #000000;
+        }
+
+            table.minimalistBlack thead th {
+                font-size: 20px;
+                font-weight: bold;
+                color: #000000;
+                text-align: left;
+            }
+
+        table.minimalistBlack tfoot {
+            font-size: 14px;
+            font-weight: bold;
+            color: #000000;
+            border-top: 3px solid #000000;
+        }
+
+            table.minimalistBlack tfoot td {
+                font-size: 20px;
+            }
+</style>
+<p>&nbsp;</p>
+<table style="height: 41px; width: 811px;">
+    <tbody>
+        <tr style="height: 129px;">
+            <td style="width: 261px; height: 129px; font-size: 20px;">
+                <p>โรงเรียนสันติศาสน์วิทยา</p>
+                <p>68 ม.11 ต.โคกโพธิ์<br />อ.โคกโพธิ์ จ.ปัตตานี 94120<br />โทร 073-719731</p>
+            </td>
+            <td style="width: 266px; height: 129px;">
+                <h1><img style="display: block; margin-left: auto; margin-right: auto;" src="https://lh3.googleusercontent.com/MK6Lm2N7iplaqRPiZeKPbquomM38sRRda4jL21mzsgFWkmuB2Ue7S1KbK-ukh7eb7UlJYqXS3172rQyEvVTjyqW0ufBaXa3gc_hj-kiqfV982gUtSJh1Iu7YW5oh5J05KCeJbSDMjYnWoqA0J4ASedFHf7nxjDEEoOdxBqBOEJpCKUJfbQ5MhMPSdA60VyGwU-Vh480AxePLW9d6hWKSPt4TOCZtSqDXcwt9st-JIDeve2qNKHKyf98NyRoASE9k0p0Qrk3mzaSOkQieCy_RXXf1nc2LwJoVcdXn2_7YEfiu5VphKKbBFA190ycnQl7sBMtPV6t6ivpCxFI-ItcxEmZLT-yDdWO0cKol94kJauFQCgkfCSF6LzjNYJqfHdNeCUbmvnuAEkwiEwTt42k_bBJi1Ytjt1SgCFnJoeqtCfHbsNeXtnEFPC2tI7MlAhkww7BNvGcT3EgvX09rAGfwmMt0cjj6rMXBC0SuuTl_SpWxXJUk4L9CaFBIOhW2HaQCEdvMjgVkL_8xQ4emxUf8av88QcMMKOWakARdJvi6cuzwh5EjHzER5a6LUmSE4i-ZoCRRajNx-QeVMqfMDeyWxZNOVPbDGNfs10YGtdFU13RyKn2DvOOpnHaIfA34uLc=w185-h184-no" alt="cool" width="91" height="91" /></h1>
+            </td>
+            <td style="width: 264px; height: 129px;">&nbsp;</td>
+        </tr>
+        <tr style="height: 62px;">
+            <td style="width: 261px; height: 62px;">&nbsp;</td>
+            <td style="width: 266px; height: 62px;">
+                <h2 style="color: #5e9ca0; text-align: center;"><span style="color: #000000; font-size: 25px;">ใบสำคัญรับเงิน</span></h2>
+            </td>
+            <td style="width: 264px; text-align: right; height: 62px;">
+                <table style="height: 56px; width: 262px; font-size: 20px;">
+                    <tbody>
+                        <tr>
+                            <td style="width: 78px;">เลขที่</td>
+                            <td style="width: 68px;">No.</td>
+                            <td style="width: 100px; text-align: left; padding-left: 30px;">0009</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 78px;">วันที่</td>
+                            <td style="width: 68px;">Date</td>
+                            <td style="width: 100px;">18/02/2561</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        
+        <tr style="height: 39px;">
+            <td style="width: 791px; height: 39px;" colspan="3">
+                <table style="height: 6px; width: 789px; font-size: 20px;" cellspacing="0" cellpadding="0">
+                    <thead>
+                        <tr>
+                            <td style="width: 231px;">ชื่อ-สกุล  @Model.detailStudent.StudentName  @Model.detailStudent.StudentLname&nbsp;</td>
+                            <td style="width: 348px;">เลขที่บัตรประชาชน @Model.detailStudent.StudentIdcard   </td>
+                            <td style="width: 188px;">รหัสประจำตัว @Model.detailStudent.StudentPsisId</td>
+                        </tr>
+                    </thead>
+                </table>
+                <table style="height: 6px; width: 789px; font-size: 20px;" cellspacing="0" cellpadding="0">
+                    <thead>
+                        <tr>
+                            <td style="width: 231px;">ปีการศึกษา&nbsp;  @Model.detailStudent.ClassYearIndex</td>
+                            <td style="width: 348px;">ภาคเรียนที่ 1</td>
+                            <td style="width: 188px;">ชั้น @Model.detailStudent.ClassNameId</td>
+                        </tr>
+                    </thead>
+                </table>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>&nbsp;</p>
+<STYLE TYPE="text/css">
+    .breakhere {
+        page-break-after: always
+    }
+</STYLE>
+<P CLASS="breakhere">
+    <table class="minimalistBlack" style="height: 88px; width: 801px; border: 1px solid #333333; font-size: 25px;" cellpadding="0">
+        <tbody>
+            <tr style="height: 40px; border: 1px solid #333;">
+                <th style="width: 97px; height: 40px;">ลำดับ</th>
+                <th style="width: 633px; height: 40px;">&nbsp;รายการ</th>
+                <th style="width: 138px; height: 40px;">&nbsp;จำนวนหน่วย</th>
+                <th style="width: 123px; height: 40px;">&nbsp;จำนวนเงินจ่าย</th>
+            </tr>
+            @{
+                int index = 1;
+                foreach (var item in Model.studentPaid)
+                {
+                    <tr style="height: 24px;">
+                        <td style="width: 97px; height: 24px;">&nbsp;@index</td>
+                        <td style="width: 633px; height: 24px;">&nbsp;ค่าอาหารประจำเดือน @item.MonthName พ.ศ.@item.MonthYear</td>
+                        <td style="width: 138px; height: 24px; text-align: center;">&nbsp;@item.MonthCourse</td>
+                        <td style="width: 123px; height: 24px; text-align: center;">@item.Paid</td>
+                    </tr>
+                    index++;
+                }
+            }
+
+            <tr style="height: 18px;">
+                <td style="width: 868px; height: 18px; text-align: right; padding-left: 60px;" colspan="3">รวม&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td>
+                <td style="width: 123px; height: 18px; text-align: center;">2,250</td>
+            </tr>
+        </tbody>
+    </table>
+<p>&nbsp;</p>
+<table style="height: 127px; width: 811px;">
+    <tbody>
+        <tr>
+            <td style="width: 538px;">
+                <table style="height: 116px; width: 544px;">
+                    <tbody>
+                        <tr>
+                            <td style="width: 362px;" colspan="37">หมายเหตุ ; - หากมีข้อสงสัยให้ติดต่อทางโรงเรียน (ครูประจำชั้น)</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 14px;">&nbsp;</td>
+                            <td style="width: 4px;">&nbsp;</td>
+                            <td style="width: 4px;">&nbsp;</td>
+                            <td style="width: 340px;" colspan="34">&nbsp;- เฉพาะวันจันทร์ &ndash; วันศุกร์&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 14px;">&nbsp;</td>
+                            <td style="width: 4px;">&nbsp;</td>
+                            <td style="width: 4px;">&nbsp;</td>
+                            <td style="width: 340px;" colspan="34">&nbsp;(1) ถ้าเรียน 2 สัปดาห์ คิดเป็นวัน</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 14px;">&nbsp;</td>
+                            <td style="width: 4px;">&nbsp;</td>
+                            <td style="width: 4px;">&nbsp;</td>
+                            <td style="width: 340px;" colspan="34">&nbsp;(2) ถ้าเรียน 3 สัปดาห์ขึ้นไป คิดเป็นเดือน</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+            <td style="width: 259px;">
+                &nbsp;
+                <table style="height: 88px;" width="228">
+                    <tbody>
+                        <tr>
+                            <td style="width: 218px; text-align: center;">ลงชื่อ(............................)</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 218px; text-align: center;">นาง ซูไรดา</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 218px; text-align: center;">เจ้าหน้าที่ฝ่ายการเงิน</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </tbody>
+</table>บ

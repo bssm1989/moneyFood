@@ -1,0 +1,211 @@
+﻿@model moneyFood.Models.ViewPrintInvoise;
+@{
+    Layout = null;
+}
+<header>
+    <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+        <style>
+            table.minimalistBlack {
+                border: 3px solid #000000;
+                width: 100%;
+                text-align: left;
+                border-collapse: collapse;
+            }
+
+                table.minimalistBlack td, table.minimalistBlack th {
+                    border: 1px solid #000000;
+                    padding: 5px 4px;
+                }
+
+                table.minimalistBlack tbody td {
+                    font-size: 20px;
+                }
+
+                table.minimalistBlack thead {
+                    background: #CFCFCF;
+                    background: -moz-linear-gradient(top, #dbdbdb 0%, #d3d3d3 66%, #CFCFCF 100%);
+                    background: -webkit-linear-gradient(top, #dbdbdb 0%, #d3d3d3 66%, #CFCFCF 100%);
+                    background: linear-gradient(to bottom, #dbdbdb 0%, #d3d3d3 66%, #CFCFCF 100%);
+                    border-bottom: 3px solid #000000;
+                }
+
+                    table.minimalistBlack thead th {
+                        font-size: 20px;
+                        font-weight: bold;
+                        color: #000000;
+                        text-align: left;
+                    }
+
+                table.minimalistBlack tfoot {
+                    font-size: 14px;
+                    font-weight: bold;
+                    color: #000000;
+                    border-top: 3px solid #000000;
+                }
+
+                    table.minimalistBlack tfoot td {
+                        font-size: 20px;
+                    }
+        </style>
+</header>
+@for (int i = 0; i < Model.detailStudent.Count; i++)
+{
+    //var imagePath = Microsoft.AspNetCore.Server.HttpSys.("~/images/logo-1.jpg");
+
+    <table style="height: 41px; width: 811px;">
+
+        <tbody>
+            <tr style="height: 129px;">
+                <td style="width: 261px; height: 129px; font-size: 20px;">
+                    <p>โรงเรียนสันติศาสน์วิทยา</p>
+                    <p>68 ม.11 ต.โคกโพธิ์<br />อ.โคกโพธิ์ จ.ปัตตานี 94120<br />โทร 073-719731</p>
+                </td>
+                <td style="width: 266px; height: 129px;">
+                    <h1>
+                        <img style="display: block; margin-left: auto; margin-right: auto ;" src= "http://i65.tinypic.com/1zx8nyg.jpg" asp-append-version="true" width="91" height="91" />
+                    </h1>
+                </td>
+                <td style="width: 264px; height: 129px;">&nbsp;</td>
+            </tr>
+            <tr style="height: 62px;">
+                <td style="width: 261px; height: 62px;">&nbsp;</td>
+                <td style="width: 266px; height: 62px;">
+                    <h2 style="color: #5e9ca0; text-align: center;"><span style="color: #000000; font-size: 25px;">ใบแจ้งค่าอาหาร</span></h2>
+                </td>
+                <td style="width: 264px; text-align: right; height: 62px;">
+                    <table style="height: 56px; width: 262px; font-size: 20px;">
+                        <tbody>
+                            <tr>
+                                <td style="width: 78px;">เลขที่</td>
+                                <td style="width: 68px;">No.</td>
+                                <td style="width: 100px; text-align: left; padding-left: 30px;">inv002</td>
+                            </tr>
+                            <tr>
+                                <td style="width: 78px;">วันที่</td>
+                                <td style="width: 68px;">Date</td>
+                                <td style="width: 100px;">29/11/2561</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+
+            <tr style="height: 39px;">
+                <td style="width: 791px; height: 39px;" colspan="3">
+                    <table style="height: 6px; width: 789px; font-size: 20px;" cellspacing="0" cellpadding="0">
+                        <thead>
+                            <tr>
+                                <td style="width: 231px;">ชื่อ-สกุล  @Model.detailStudent[i].StudentName @Model.detailStudent[i].StudentLname&nbsp;</td>
+                                <td style="width: 348px;">เลขที่บัตรประชาชน @Model.detailStudent[i].StudentIdcard   </td>
+                                <td style="width: 188px;">รหัสประจำตัว @Model.detailStudent[i].StudentPsisId</td>
+                            </tr>
+                        </thead>
+                    </table>
+                    <table style="height: 6px; width: 789px; font-size: 20px;" cellspacing="0" cellpadding="0">
+                        <thead>
+                            <tr>
+                                <td style="width: 231px;">ปีการศึกษา&nbsp; @Model.detailStudent[i].ClassYearIndex</td>
+                                <td style="width: 348px;">ภาคเรียนที่ 2</td>
+                                <td style="width: 188px;">ชั้น @Model.detailStudent[i].ClassNameId</td>
+                            </tr>
+                        </thead>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>&nbsp;</p>
+
+    <table class="minimalistBlack" style="height: 88px; width: 801px; border: 1px solid #333333; font-size: 25px;" cellpadding="0">
+        <tbody>
+            <tr style="height: 40px; border: 1px solid #333;">
+                <th style="width: 97px; height: 40px;">ลำดับ</th>
+                <th style="width: 633px; height: 40px;">&nbsp;รายการ</th>
+                <th style="width: 138px; height: 40px;">&nbsp;จำนวนหน่วย</th>
+                <th style="width: 123px; height: 40px;">&nbsp;ยอดค้าง</th>
+            </tr>
+            @{
+                int index = 1;
+                foreach (var items in Model.studentInvoise[i])
+                {
+                    var sub = items.MonthCourse - items.totalPaid;
+
+
+                    <tr style="height: 24px;">
+                        <td style="width: 97px; height: 24px;">&nbsp;@index</td>
+                        <td style="width: 633px; height: 24px;">&nbsp;ค่าอาหารประจำเดือน @items.MonthName พ.ศ.@items.MonthYear</td>
+                        <td style="width: 138px; height: 24px; text-align: center;">&nbsp;@Convert.ToDecimal(items.MonthCourse).ToString("#,##0.00")</td>
+                        <td style="width: 123px; height: 24px; text-align: center;">@Convert.ToDecimal(sub).ToString("#,##0.00")</td>
+
+                    </tr>
+                    index++;
+
+                }
+            }
+
+            <tr style="height: 18px;">
+                <td style="width: 868px; height: 18px; text-align: right; padding-left: 60px;" colspan="3">รวม&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td>
+                <td style="width: 123px; height: 18px; text-align: center;">@Convert.ToDecimal(Model.studentInvoise[i].Sum(x => x.MonthCourse - x.totalPaid)).ToString("#,##0.00") </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>&nbsp;</p>
+    <table style="height: 127px; width: 811px;">
+        <tbody>
+            <tr>
+                <td style="width: 538px;">
+                    <table style="height: 116px; width: 544px;">
+                        <tbody>
+                            <tr>
+                                <td style="width: 362px;" colspan="37">หมายเหตุ ; - หากมีข้อสงสัยให้ติดต่อทางโรงเรียน (ครูประจำชั้น)</td>
+                            </tr>
+                            <tr>
+                                <td style="width: 14px;">&nbsp;</td>
+                                <td style="width: 4px;">&nbsp;</td>
+                                <td style="width: 4px;">&nbsp;</td>
+                                <td style="width: 340px;" colspan="34">&nbsp;- เฉพาะวันจันทร์ &ndash; วันศุกร์&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td style="width: 14px;">&nbsp;</td>
+                                <td style="width: 4px;">&nbsp;</td>
+                                <td style="width: 4px;">&nbsp;</td>
+                                <td style="width: 340px;" colspan="34">&nbsp;(1) ถ้าเรียน 2 สัปดาห์ คิดเป็นวัน</td>
+                            </tr>
+                            <tr>
+                                <td style="width: 14px;">&nbsp;</td>
+                                <td style="width: 4px;">&nbsp;</td>
+                                <td style="width: 4px;">&nbsp;</td>
+                                <td style="width: 340px;" colspan="34">&nbsp;(2) ถ้าเรียน 3 สัปดาห์ขึ้นไป คิดเป็นเดือน</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+                <td style="width: 259px;">
+                    &nbsp;
+                    <table style="height: 88px;" width="228">
+                        <tbody>
+                            <tr>
+                                <td style="width: 218px; text-align: center;">ลงชื่อ(............................)</td>
+                            </tr>
+                            <tr>
+                                <td style="width: 218px; text-align: center;">นางสาวซูรายดา  สะนอยานยา</td>
+                            </tr>
+                            <tr>
+                                <td style="width: 218px; text-align: center;">เจ้าหน้าที่ฝ่ายการเงิน</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <STYLE TYPE="text/css">
+        .breakhere {
+            page-break-after: always
+        }
+    </STYLE>
+    <P CLASS="breakhere"></P>
+
+}

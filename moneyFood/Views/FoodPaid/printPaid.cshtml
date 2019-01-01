@@ -1,0 +1,90 @@
+﻿@model IEnumerable<moneyFood.Models.viewdetail>
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+<head>
+    <script type="text/javascript" language="javascript" class="init">
+
+        $(document).ready(function () {
+            $('#example1').DataTable({  "pageLength": 50,
+                "scrollY": "200px",
+                "scrollCollapse": false,
+                "info": true,
+                "paging": true,
+                'aoColumns': [
+                    { sWidth: "15%", bSearchable: false, bSortable: false },
+                    { sWidth: "15%", bSearchable: false, bSortable: false },
+                    { sWidth: "15%", bSearchable: false, bSortable: false },
+                    { sWidth: "15%", bSearchable: false, bSortable: false },
+                    { sWidth: "15%", bSearchable: false, bSortable: false },
+                    { sWidth: "15%", bSearchable: false, bSortable: false },
+                ],
+            });
+        });
+
+    </script>
+</head>
+@{
+    var studentid = Model.FirstOrDefault().StudentId;
+}
+<h3>รายการการจ่าย</h3> <a class="btn btn-success" href="@Url.Action("printBill", "FoodPaid",new {StudentId=Model.FirstOrDefault().StudentId })">เพิ่มรายการการจ่าย</a>
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <table id="datatable" class="table table-striped table-bordered dataTable no-footer" role="grid" aria-describedby="datatable_info">
+            <thead>
+                <tr>
+                    <th class="sorting_asc">ลำดับ</th>
+
+                    <th class="sorting_asc">คำนำหน้า</th>
+                    <th class="sorting_asc">ชื่อ</th>
+                    <th class="sorting_asc">นามสกุล</th>
+                    <th class="sorting_asc">เดือน(ไทย)</th>
+                    <th class="sorting_asc">ปีการศึกษา</th>
+                    <th class="sorting_asc">ค่าอาหาร</th>
+                    <th class="sorting_asc">สถานะ</th>
+                    <th class="sorting_asc">ชั้น</th>
+                    <th class="sorting_asc">อาจาร์ประจำชั้น</th>
+                    <th class="sorting_asc">ห้อง</th>
+                    <th class="sorting_asc">ปีการศึกษา</th>
+                    <th class="sorting_asc">รหัสการจ่าย</th>
+                    <th class="sorting_asc">จ่าย</th>
+                    <th class="sorting_asc">วันที่บันทึก</th>
+                    <th></th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td></td>
+                        <td>@item.StudentTitle</td>
+                        <td>@item.StudentName </td>
+                        <td>@item.StudentLname </td>
+                        <td>@item.MonthName</td>
+                        <td>@item.MonthYear</td>
+                        <td>@item.MonthCourse </td>
+                        <td>@item.Status</td>
+                        <td>@item.ClassNameId</td>
+                        <td>@item.TeacherId </td>
+                        <td>@item.ClassRoom</td>
+                        <td>@item.ClassYearIndex </td>
+                        <td>@item.PaidId</td>
+                        <td>@item.Paid</td>
+                        <td>@item.Timestamp</td>
+
+                        <td>
+
+                            <a asp Timestamp-action="paid"
+                               asp StaffPaidId-route-id="@item.PaidId">Detials</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+<h2>Index</h2>

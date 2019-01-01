@@ -1,0 +1,120 @@
+﻿@model moneyFood.Models.viewPaid
+
+@{
+    ViewData["Title"] = "View1";
+}
+
+<h2>View1</h2>
+
+<h4>viewPaid</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="View1">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="StudentId" class="control-label"></label>
+                <input asp-for="StudentId" class="form-control" />
+                <span asp-validation-for="StudentId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StudentTitle" class="control-label"></label>
+                <input asp-for="StudentTitle" class="form-control" />
+                <span asp-validation-for="StudentTitle" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StudentName" class="control-label"></label>
+                <input asp-for="StudentName" class="form-control" />
+                <span asp-validation-for="StudentName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StudentLname" class="control-label"></label>
+                <input asp-for="StudentLname" class="form-control" />
+                <span asp-validation-for="StudentLname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MonthName" class="control-label"></label>
+                <input asp-for="MonthName" class="form-control" />
+                <span asp-validation-for="MonthName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MonthYear" class="control-label"></label>
+                <input asp-for="MonthYear" class="form-control" />
+                <span asp-validation-for="MonthYear" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MonthCourse" class="control-label"></label>
+                <input asp-for="MonthCourse" class="form-control" />
+                <span asp-validation-for="MonthCourse" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClassId" class="control-label"></label>
+                <input asp-for="ClassId" class="form-control" />
+                <span asp-validation-for="ClassId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Status" class="control-label"></label>
+                <input asp-for="Status" class="form-control" />
+                <span asp-validation-for="Status" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClassNameId" class="control-label"></label>
+                <input asp-for="ClassNameId" class="form-control" />
+                <span asp-validation-for="ClassNameId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TeacherId" class="control-label"></label>
+                <input asp-for="TeacherId" class="form-control" />
+                <span asp-validation-for="TeacherId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClassRoom" class="control-label"></label>
+                <input asp-for="ClassRoom" class="form-control" />
+                <span asp-validation-for="ClassRoom" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClassYearIndex" class="control-label"></label>
+                <input asp-for="ClassYearIndex" class="form-control" />
+                <span asp-validation-for="ClassYearIndex" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PaidId" class="control-label"></label>
+                <input asp-for="PaidId" class="form-control" />
+                <span asp-validation-for="PaidId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PaidSum" class="control-label"></label>
+                <input asp-for="PaidSum" class="form-control" />
+                <span asp-validation-for="PaidSum" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MonthlyId" class="control-label"></label>
+                <input asp-for="MonthlyId" class="form-control" />
+                <span asp-validation-for="MonthlyId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Timestamp" class="control-label"></label>
+                <input asp-for="Timestamp" class="form-control" />
+                <span asp-validation-for="Timestamp" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StaffPaidId" class="control-label"></label>
+                <input asp-for="StaffPaidId" class="form-control" />
+                <span asp-validation-for="StaffPaidId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="totalPaid" class="control-label"></label>
+                <input asp-for="totalPaid" class="form-control" />
+                <span asp-validation-for="totalPaid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
